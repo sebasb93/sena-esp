@@ -1,3 +1,238 @@
-<html>
-    <head></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Anidar elementos (>)</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>	
+
+	<!-------------------------------------->
+	<h2>Anidar Elementos ( > )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: ul>li>a>img
+		</div>
+			
+		<div class="resultado">
+
+			<xmp>
+				<ul>
+					<li><a href=""><img src="" alt=""></a></li>
+				</ul>
+			</xmp>			
+
+		</div>
+	</section>
+	<!-------------------------------------->
+
+	<h2>Elementos Hermanos ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				header>div+nav
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<header>
+					<div></div>
+					<nav></nav>
+				</header>
+			</xmp>
+		</div>
+	</section>
+	<!-------------------------------------->
+
+	<h2>Repetir Elementos ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				ul>li*5
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</xmp>
+		</div>
+	</section>
+
+	<!-------------------------------------->
+
+	<h2>Atributo Clase ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				div.contenedor
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<div class="contenedor"></div>
+			</xmp>
+		</div>
+	</section>
+
+	<!-------------------------------------->
+	
+	<h2>Multiples clases ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				div.clase1.clase2.clase3
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<div class="clase1 clase2 clase3"></div>
+			</xmp>
+		</div>
+	</section>
+
+	<!-------------------------------------->
+
+	<h2>Atributo identificador ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				nav#opciones
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<nav id="opciones"></nav>
+			</xmp>
+		</div>
+	</section>
+
+	<!-------------------------------------->
+
+	<h2>Adicionar Texto ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				div{texto de prueba}
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<div>texto de prueba</div>
+			</xmp>
+		</div>
+	</section>
+
+	<!-------------------------------------->
+
+	<h2>Personalizar atributos ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				a[href=www.google.com]
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<a href="www.google.com"></a>
+			</xmp>
+		</div>
+	</section>
+
+	<!-------------------------------------->
+
+	<h2>Numeros Consecutivos ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				ul>li.con$*4
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<ul>
+					<li class="con1"></li>
+					<li class="con2"></li>
+					<li class="con3"></li>
+					<li class="con4"></li>
+				</ul>
+			</xmp>
+		</div>
+	</section>
+
+	<!-------------------------------------->
+
+	<h2>Subir de nivel ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				section>article>div^h1
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<section>
+					<article>
+						<div></div>
+					</article>
+					<h1></h1>
+				</section>
+			</xmp>
+		</div>
+	</section>
+
+	<!-------------------------------------->
+
+	<h2>Agrupar Elementos ( + )</h2>
+	<section>
+		<div class="ejemplo">				
+				
+				Ejemplo: 
+				(div>h1)(div>h2)	
+		</div>
+			
+		<div class="resultado">
+			<xmp>
+				<div>
+					<h1></h1>
+				</div>
+				<div>
+					<h2></h2>
+				</div>
+			</xmp>
+		</div>
+	</section>
+
+	<!-------------------------------------->
+
+	
+	
+	<script src="js/jquery-3.2.1.min.js"> </script>
+		<script>
+		$(document).ready(function() {
+			$('.resultado').hide();
+			$('section').on('click', '.ejemplo', function(event) {
+				event.preventDefault();
+				/* Act on the event */
+				$(this).next('.resultado').slideToggle('slow')
+			});
+		});
+	</script>
+
+</body>
 </html>
