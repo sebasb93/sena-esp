@@ -1,0 +1,12 @@
+h1 Condicionales
+
+-var authorized = true
+-var user = {description: 'Lorem Ipsum Dolor'}
+
+article#user
+    if authorized
+        h2.green Description
+        p.description= user.description
+    else
+        h2.read Description
+        p.description El usuario no tiene descripcion
